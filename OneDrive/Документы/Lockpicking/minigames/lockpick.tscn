@@ -1,0 +1,79 @@
+[gd_scene load_steps=10 format=3 uid="uid://bwjgia5nwk06d"]
+
+[ext_resource type="Script" path="res://minigames/lockpick.gd" id="1_1bdd4"]
+[ext_resource type="Texture2D" uid="uid://dxxdqvn380xh5" path="res://lockpicking/lockpick-Sheet.png" id="2_ier2e"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_htmau"]
+atlas = ExtResource("2_ier2e")
+region = Rect2(480, 0, 120, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lo7qv"]
+atlas = ExtResource("2_ier2e")
+region = Rect2(0, 0, 120, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7wsbp"]
+atlas = ExtResource("2_ier2e")
+region = Rect2(120, 0, 120, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m6d4r"]
+atlas = ExtResource("2_ier2e")
+region = Rect2(240, 0, 120, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lqv8h"]
+atlas = ExtResource("2_ier2e")
+region = Rect2(360, 0, 120, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v5qsl"]
+atlas = ExtResource("2_ier2e")
+region = Rect2(480, 0, 120, 120)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hksl4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_htmau")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 3.0,
+"texture": SubResource("AtlasTexture_lo7qv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7wsbp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m6d4r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lqv8h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v5qsl")
+}],
+"loop": false,
+"name": &"spawn",
+"speed": 8.0
+}]
+
+[node name="Lockpick" type="Area2D"]
+texture_filter = 1
+collision_layer = 2048
+collision_mask = 13312
+script = ExtResource("1_1bdd4")
+
+[node name="lockpick_animation" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(41, -5)
+sprite_frames = SubResource("SpriteFrames_hksl4")
+animation = &"spawn"
+frame = 4
+frame_progress = 1.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(-205, -185)
+polygon = PackedVector2Array(234, 181, 270, 181, 270, 180, 306, 180, 306, 185, 270, 185, 270, 184, 234, 184)
+
+[connection signal="area_entered" from="." to="." method="_on_pin_area_entered"]

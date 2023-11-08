@@ -1,0 +1,102 @@
+[gd_scene load_steps=11 format=3 uid="uid://gvwrhgqqeuu5"]
+
+[ext_resource type="PackedScene" uid="uid://bfw7baacbau77" path="res://minigames/lamelle.tscn" id="1_e3o0j"]
+[ext_resource type="Texture2D" uid="uid://i21psgpkqgwn" path="res://lockpicking/ring1.png" id="3_8vap7"]
+[ext_resource type="Texture2D" uid="uid://c55fwyb8ytqjb" path="res://lockpicking/ring2.png" id="4_teaeq"]
+[ext_resource type="Texture2D" uid="uid://cxf3cr436qyvj" path="res://lockpicking/ring3.png" id="5_knc67"]
+[ext_resource type="Texture2D" uid="uid://bbyf1pnet44y5" path="res://lockpicking/ring4.png" id="6_dx3um"]
+[ext_resource type="Texture2D" uid="uid://cvo6p2dknmpqy" path="res://lockpicking/ring5.png" id="7_tblcn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6d8lv"]
+size = Vector2(2.33334, 7)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_miq7i"]
+size = Vector2(2.16667, 7.33333)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8j4j7"]
+size = Vector2(1.74999, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wuxvm"]
+size = Vector2(2.33334, 11)
+
+[node name="lamelle_container" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(3, 3)
+
+[node name="Lamelle1" parent="." instance=ExtResource("1_e3o0j")]
+
+[node name="Lamelle" parent="Lamelle1" index="0"]
+texture = ExtResource("3_8vap7")
+
+[node name="LamelleCollision" parent="Lamelle1" index="1"]
+polygon = PackedVector2Array(13, -3, 11.6667, -7, 9, -10.6667, 3, -13.3333, -3, -13.3333, -10, -9.33333, -11.6667, -6.66666, -13.3333, -3.33333, -13.3333, 3, -9.66666, 10, -6.33333, 12.3333, -3, 13.6667, 3, 13.6667, 10.3333, 9.33334, 12.6667, 5.66667, 13, 3, 14.6667, 3, 15, 6, 11, 11.6667, 3, 16, -2.66666, 16, -7, 14.3333, -10.3333, 12, -15, 6, -16, -2.66666, -14, -7.66666, -11, -11.6667, -6.33333, -14.3333, -3.33333, -15.3333, 3, -15.6667, 6.66667, -14.6667, 10.6667, -12, 14, -7.33333, 14.6667, -3.33333)
+
+[node name="Lock" parent="Lamelle1/LockArea" index="0"]
+position = Vector2(13.6667, 0)
+
+[node name="Lamelle2" parent="." instance=ExtResource("1_e3o0j")]
+auto_rotation_speed = 50.0
+rotate_multiplier = 1
+
+[node name="Lamelle" parent="Lamelle2" index="0"]
+texture = ExtResource("4_teaeq")
+
+[node name="LamelleCollision" parent="Lamelle2" index="1"]
+polygon = PackedVector2Array(17, -4.33333, 14.6667, -10.3333, 7.33334, -16.3333, 4, -18, -4, -17.6667, -11, -14, -16.3333, -7, -18, -3.33333, -17.6667, 4.33334, -13.3333, 11.6667, -7.66666, 16, -3.66666, 17.6667, 3, 18, 8, 16, 12.3333, 12.6667, 14.6667, 10, 16.6667, 6.66667, 17, 4, 18.6667, 4, 18.6667, 6.66667, 17.6667, 8.66667, 16.3333, 11.3333, 13, 15, 8.66667, 18, 4, 19.6667, -3.66666, 20, -8.66666, 18, -14.6667, 13.3333, -18, 9, -20, 4, -20, -3.66666, -17.6667, -9.66666, -12, -16, -6, -19.3333, -4.66666, -20, 3.33334, -20.3333, 10.3333, -17.3333, 13.3941, -14.2726, 16.6667, -11, 19, -7, 19, -4)
+
+[node name="Lock" parent="Lamelle2/LockArea" index="0"]
+position = Vector2(18.1667, -0.166664)
+shape = SubResource("RectangleShape2D_6d8lv")
+
+[node name="Lamelle3" parent="." instance=ExtResource("1_e3o0j")]
+auto_rotation_speed = 10.0
+
+[node name="Lamelle" parent="Lamelle3" index="0"]
+texture = ExtResource("5_knc67")
+
+[node name="LamelleCollision" parent="Lamelle3" index="1"]
+polygon = PackedVector2Array(20.3333, -5, 18.6667, -11.6667, 15.3333, -15.3333, 8.66667, -20.3333, 0.666672, -22.3333, -7.66666, -20.6667, -14.6667, -16.3333, -19.3333, -9.66666, -22, -2.66666, -21.3333, 5, -16.3333, 14.6667, -9, 19.6667, -3.66666, 21.6667, 4.66667, 21.6667, 10.3333, 19.3333, 15.6667, 15.3333, 18.6667, 11.6667, 20.3333, 7.66667, 21, 4.66667, 23, 5, 22.6667, 7.66667, 20, 12.3333, 17, 17, 12, 20.6667, 4.66667, 23.3333, -4.33333, 23.3333, -9.33333, 22, -16.6667, 16.6667, -20.6667, 11.3333, -23.3333, 5.66667, -24, -2.66666, -20.6667, -11.3333, -14, -19.6667, -8, -22.6667, -4, -24, 3.66667, -24.3333, 11.6667, -21, 17, -17, 21.3333, -11.6667, 22.6667, -5)
+
+[node name="Lock" parent="Lamelle3/LockArea" index="0"]
+position = Vector2(22, 0)
+shape = SubResource("RectangleShape2D_miq7i")
+
+[node name="Lamelle4" parent="." instance=ExtResource("1_e3o0j")]
+auto_rotation_speed = 40.0
+rotate_multiplier = 1
+
+[node name="Lamelle" parent="Lamelle4" index="0"]
+texture = ExtResource("6_dx3um")
+
+[node name="LamelleCollision" parent="Lamelle4" index="1"]
+polygon = PackedVector2Array(24.6667, -6.33333, 22, -13.3333, 17.6667, -19, 11, -23.3333, 4.33334, -26, -4, -25.6667, -11.3333, -23.6667, -18, -17.6667, -24.3333, -9, -25.6667, 0.333336, -25.3333, 5, -23.3333, 10, -16.6667, 20, -9, 24.3333, -1.66666, 26, 7.33334, 25, 13.6667, 21.3333, 19, 17.3333, 22.6667, 13, 24.3333, 10.6667, 25, 5.66667, 27, 6, 26.3333, 10.6667, 24.3333, 14, 21.3333, 18.3333, 16, 22.6667, 8.66667, 26.6667, 0.333344, 28, -6.33333, 27.6667, -12.3333, 25, -18.6667, 21, -24.6667, 13.6667, -27.3333, 5.66667, -27.6667, 0.333336, -27, -10, -19, -20.3333, -14, -24, -5.33333, -28, 5, -28, 13.6667, -24.6667, 19, -21.3333, 24.3333, -14.3333, 27, -6.33333)
+
+[node name="Lock" parent="Lamelle4/LockArea" index="0"]
+position = Vector2(26.2083, 0)
+shape = SubResource("RectangleShape2D_8j4j7")
+
+[node name="Lamelle5" parent="." instance=ExtResource("1_e3o0j")]
+auto_rotation_speed = 40.0
+
+[node name="Lamelle" parent="Lamelle5" index="0"]
+texture = ExtResource("7_tblcn")
+
+[node name="LamelleCollision" parent="Lamelle5" index="1"]
+polygon = PackedVector2Array(29.3333, -6.66666, 26, -15.3333, 19.6667, -22.3333, 12, -27.3333, 4, -30, -6, -30, -15, -25.6667, -22.3333, -19.3333, -28.6667, -9.33333, -29.6667, 3.33334, -25.3333, 16, -18, 24, -10, 28, -5, 30, -0.333328, 30, 6.33334, 29.3333, 11, 27.6667, 18.6667, 23, 24, 18, 27.3333, 13.3333, 29, 7, 31.6667, 7, 29, 14, 26.3333, 18.6667, 20.6667, 24.6667, 14, 29, 5.33334, 32.3333, -5, 32.3333, -12.3333, 30.3333, -19, 26.3333, -27.6667, 17, -32.3333, 3.33334, -31, -10, -24, -21.6667, -17, -27.6667, -5.66666, -32.3333, 4.66667, -32.3333, 14.3333, -29.3333, 20.6667, -24.3333, 28, -16.3333, 31.3333, -7)
+
+[node name="Lock" parent="Lamelle5/LockArea" index="0"]
+position = Vector2(30, 0)
+shape = SubResource("RectangleShape2D_wuxvm")
+
+[editable path="Lamelle1"]
+[editable path="Lamelle2"]
+[editable path="Lamelle3"]
+[editable path="Lamelle4"]
+[editable path="Lamelle5"]

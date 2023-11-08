@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://bfw7baacbau77"]
+
+[ext_resource type="Script" path="res://minigames/lock_lamella.gd" id="1_mhf34"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h26ut"]
+size = Vector2(2.83333, 5.5)
+
+[node name="Lamelle" type="Area2D"]
+collision_layer = 1024
+collision_mask = 2048
+script = ExtResource("1_mhf34")
+auto_rotation_speed = 30.0
+
+[node name="Lamelle" type="Sprite2D" parent="."]
+texture_filter = 1
+offset = Vector2(0, 4)
+
+[node name="LamelleCollision" type="CollisionPolygon2D" parent="."]
+
+[node name="LockArea" type="Area2D" parent="."]
+collision_layer = 4096
+collision_mask = 2048
+
+[node name="Lock" type="CollisionShape2D" parent="LockArea"]
+position = Vector2(11.3333, 0)
+shape = SubResource("RectangleShape2D_h26ut")
